@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:wght@400;500&display=swap');
+
+body {
+  background: linear-gradient(135deg, #ffe2e6 0%, #e0eaff 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.modern-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 32px;
+  box-shadow: 0 8px 64px 0 #b9adfa2a, 0 2px 8px #ff6b6b18;
+  padding: 30px 18px 30px 18px;
+  position: relative;
+}
+
+.header-modern {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.logo-circle {
+  background: linear-gradient(135deg, #ff6b6b 30%, #b086ec 80%);
+  border-radius: 50%;
+  width: 90px; height: 90px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px #ffb86c33;
+  animation: float 3s infinite ease-in-out;
+}
+.logo-circle img {
+  width: 62px;
+  height: 62px;
+  animation: spin 3.5s linear infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes spin { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+.header-modern h1 {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-size: 2.5rem;
+  margin: 0;
+  color: #222;
+  letter-spacing: 1px;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: #7d7d7d;
+}
+.subtitle span {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.internships-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 35px 0;
+}
+
+.modern-card {
+  background: linear-gradient(120deg, #e0eaff 70%, #ffe2e6 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px #b09bfa22, 0 1px 2px #00000011;
+  padding: 28px 24px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.22s cubic-bezier(0.5,1.6,0.4,1), box-shadow 0.21s;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-card:hover {
+  transform: translateY(-7px) scale(1.027);
+  box-shadow: 0 10px 36px 0 #b09bfa45, 0 2px 8px #ff6b6b33;
+}
+
+.modern-card:before {
+  content: '';
+  position: absolute;
+  right: -22px;
+  top: -22px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #ffb86c55 0%, transparent 70%);
+  z-index: 0;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.modern-card h2 {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-size: 1.33rem;
+  color: #6c2cff;
+  margin: 0 0 18px 0;
+  z-index: 1;
+}
+
+.card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 30px;
+  font-size: 1.07rem;
+  color: #444;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+.card-details span {
+  background: #fff8f2;
+  border-radius: 8px;
+  padding: 4px 13px;
+  font-weight: 500;
+  box-shadow: 0 1px 4px #ffb86c1a;
+}
+
+.modern-btn {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-size: 1.08rem;
+  padding: 10px 30px;
+  border-radius: 24px;
+  background: linear-gradient(90deg, #ff6b6b 50%, #6c2cff 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  letter-spacing: 0.7px;
+  margin-top: 12px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px #6c2cff2c;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  transition: background 0.22s, transform 0.18s, box-shadow 0.19s;
+  overflow: hidden;
+}
+.modern-btn:hover {
+  background: linear-gradient(90deg, #6c2cff 0%, #ff6b6b 100%);
+  transform: scale(1.07) translateY(-2px);
+  box-shadow: 0 6px 18px #ff6b6b44;
+}
+.modern-btn:active {
+  transform: scale(0.98);
+}
+
+.card1 { border-left: 6px solid #ff6b6b; }
+.card2 { border-left: 6px solid #ffb86c; }
+.card3 { border-left: 6px solid #6c2cff; }
+.card4 { border-left: 6px solid #06b6d4; }
+
+.modern-note {
+  margin-top: 34px;
+  color: #888;
+  background: #fffbe8;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 1.07rem;
+  text-align: center;
+  box-shadow: 0 2px 8px #ffb86c1f;
+}
+
+@media (max-width: 600px) {
+  .modern-container { padding: 12px 2vw 22px 2vw; }
+  .header-modern { flex-direction: column; gap: 10px; }
+  .header-modern h1 { font-size: 2rem; }
+  .internships-list { gap: 16px; }
+  .modern-card { padding: 19px 10px 16px 13px; }
+  .card-details { font-size: 0.99rem; gap: 8px 16px; }
+}
