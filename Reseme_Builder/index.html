@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Interactive Resume Builder</h1>
+
+    <div class="form-preview-wrapper">
+      <form id="resume-form">
+
+        <!-- Personal Info -->
+        <section>
+          <h2>Personal Information</h2>
+          <input type="text" id="name" placeholder="Full Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="tel" id="phone" placeholder="Phone Number" required />
+          <input type="text" id="linkedin" placeholder="LinkedIn URL" />
+          <input type="text" id="github" placeholder="GitHub / Portfolio" />
+          <textarea id="address" placeholder="Address"></textarea>
+        </section>
+
+        <!-- Education -->
+        <section id="education-section">
+          <h2>Education</h2>
+          <div class="group">
+            <input type="text" placeholder="Degree" class="edu-degree" />
+            <input type="text" placeholder="Institution" class="edu-inst" />
+            <input type="text" placeholder="Year" class="edu-year" />
+          </div>
+          <button type="button" onclick="addField('education')">+ Add Education</button>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience-section">
+          <h2>Work Experience</h2>
+          <div class="group">
+            <input type="text" placeholder="Job Title" class="exp-role" />
+            <input type="text" placeholder="Company" class="exp-company" />
+            <input type="text" placeholder="Duration" class="exp-duration" />
+            <textarea placeholder="Responsibilities" class="exp-desc"></textarea>
+          </div>
+          <button type="button" onclick="addField('experience')">+ Add Experience</button>
+        </section>
+
+        <!-- Projects -->
+        <section id="project-section">
+          <h2>Projects</h2>
+          <div class="group">
+            <input type="text" placeholder="Project Title" class="proj-title" />
+            <textarea placeholder="Description" class="proj-desc"></textarea>
+            <input type="text" placeholder="Technologies Used" class="proj-tech" />
+            <input type="text" placeholder="Link (optional)" class="proj-link" />
+          </div>
+          <button type="button" onclick="addField('project')">+ Add Project</button>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills-section">
+          <h2>Skills</h2>
+          <input type="text" placeholder="Skill" class="skills-input" />
+          <button type="button" onclick="addField('skills')">+ Add Skill</button>
+        </section>
+
+        <!-- Languages -->
+        <section id="language-section">
+          <h2>Languages</h2>
+          <input type="text" placeholder="Language & Proficiency" class="lang-input" />
+          <button type="button" onclick="addField('language')">+ Add Language</button>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certification-section">
+          <h2>Certifications / Achievements</h2>
+          <div class="group">
+            <input type="text" placeholder="Title" class="cert-title" />
+            <input type="text" placeholder="Authority" class="cert-auth" />
+            <input type="text" placeholder="Date" class="cert-date" />
+          </div>
+          <button type="button" onclick="addField('certification')">+ Add Certification</button>
+        </section>
+
+        <button type="submit">Generate Resume</button>
+      </form>
+
+      <div id="resume-preview">
+        <div id="resume-content">
+          <h2 id="preview-name"></h2>
+          <p id="preview-email"></p>
+          <p id="preview-phone"></p>
+          <p id="preview-links"></p>
+          <p id="preview-address"></p>
+
+          <div id="preview-education"></div>
+          <div id="preview-experience"></div>
+          <div id="preview-projects"></div>
+          <div id="preview-skills"></div>
+          <div id="preview-languages"></div>
+          <div id="preview-certifications"></div>
+        </div>
+
+        <button onclick="downloadPDF()">Download as PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</body>
+</html>
